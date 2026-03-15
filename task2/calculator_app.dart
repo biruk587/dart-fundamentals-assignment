@@ -1,12 +1,11 @@
 // Task 2: Async Calculator App
-// Name: Biruk Mulugeta
 
 import 'dart:async';
 
 class Calculator {
   final String name;
 
-  // Bonus: store calculation history
+  // store calculation history
   final List<String> history = [];
 
   // Named constant to avoid magic numbers
@@ -14,9 +13,7 @@ class Calculator {
 
   Calculator(this.name);
 
-  // -------------------------
   // Synchronous operations
-  // -------------------------
 
   double add(double a, double b) {
     return a + b;
@@ -38,9 +35,8 @@ class Calculator {
     return a / b;
   }
 
-  // -------------------------------------------------
   // Asynchronous computation with simulated delay
-  // -------------------------------------------------
+
   Future<double> computeAsync(double a, double b, String operation) async {
     double result;
 
@@ -72,9 +68,8 @@ class Calculator {
     return result;
   }
 
-  // -------------------------------------------------
   // Displays result and handles errors gracefully
-  // -------------------------------------------------
+
   Future<void> displayResult(double a, double b, String operation) async {
     try {
       final result = await computeAsync(a, b, operation);
@@ -85,9 +80,8 @@ class Calculator {
     }
   }
 
-  // -------------------------------------------------
-  // Bonus: Print calculation history
-  // -------------------------------------------------
+  // Print calculation history
+
   void printHistory() {
     print("\nCalculation History");
     print("--------------------");
